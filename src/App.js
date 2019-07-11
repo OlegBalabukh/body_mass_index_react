@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import './App.css';
+// import './App.css';
+import styles from './App.css';
 
 let nextId = 1;
 const initialState = {
@@ -121,30 +122,35 @@ class InputForm extends Component {
     const enabled = name && height && weight ;
     return (      
       <div>
-        <h2>Healthy Weight Calculator</h2>
-        <h3>Body Mass Index (BMI)</h3>
-        <h3 className = "index">{this.getMessage(bmi) + " " + bmi}</h3>
-        <form>          
-          <label>
-            Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <input className="input" type="text" value={name} onChange={this.handleName} />
-          </label>
-          </form>
-          <form>          
+        <h4>Healthy Weight Calculator</h4>
+        <h5>Body Mass Index (BMI)</h5>
+        <h5 className = "index">{this.getMessage(bmi) + " " + bmi}</h5>
+        <div id="inputSection">
+          <form id="nameForm">          
             <label>
-              Height (sm)&nbsp;&nbsp;
-              <input className="input" type="number" value={height} onChange={this.handleHeight} />
+              <span className="input">Name</span>
+              <input className="form-control" type="text" value={name} onChange={this.handleName} />
             </label>
+            </form>
+            <form>          
+              <label>              
+                <span className="input">Height (sm)</span>
+                <input className="form-control" type="number" value={height} onChange={this.handleHeight} />
+              </label>
+            </form>
+          <form>
+            <label>
+              <span className="input">Weight (kg)</span>
+              <input type="text" className="form-control" value={weight} onChange={this.handleWeight}/>
+            </label>                  
           </form>
-        <form>
-          <label>
-            Weight (kg)&nbsp;
-            <input className="input weight" type="number" value={weight} onChange={this.handleWeight}/>
-          </label>                  
-        </form>
-        <button  disabled={ !enabled } onClick={ this.calculateIndex }>Calculate</button><br></br>
-        <button onClick={ this.resetState }>Reset</button>
-        <button onClick={ this.handleResetAll }>Reset All</button>
+        </div>
+        <div id="buttonSection">
+        <button className="btn btn-success" type="button" disabled={ !enabled } onClick={ this.calculateIndex }>Calculate</button>
+        <button className="btn btn-warning" onClick={ this.resetState }>Reset</button>
+        <button className="btn btn-danger" onClick={ this.handleResetAll }>Reset All</button>
+        </div>
+        
       </div>
     );
   }
@@ -198,11 +204,11 @@ class Table extends Component {
   render() {
     return (
       <div>
-        <table border={1}>
+        <table>
         <tbody>
           <tr>
             <th className="id">ID</th>
-            <th>Name</th>
+            <th className="name">Name</th>
             <th>Height</th> 
             <th>Weight</th>
             <th>BMI</th>
@@ -229,7 +235,7 @@ class Calculator extends Component {
   render() {
     const userData = this.state;
     return (
-      <div>
+      <div className="container">
         <div className="inputForm">        
           <InputForm callbackFromParent={this.myCallback}/>      
         </div>
@@ -242,10 +248,8 @@ class Calculator extends Component {
 }
 
 function App() {
-  return (
-    <div className="wrapper">
-      <Calculator />      
-    </div>
+  return (    
+      <Calculator />    
   )
 }
 
