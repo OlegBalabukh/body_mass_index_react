@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Calculator from '../Calculator/Calculator';
-import './App.css';
+import './App.scss';
 
 function App() {
   return  <Calculator />

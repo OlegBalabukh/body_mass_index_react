@@ -37,3 +37,18 @@
   npm i -D @babel/plugin-proposal-decorators
   ```
   
+  ### Add 'start', 'dev', 'build' properties to package.json
+
+  ### Install loaders for css and sass
+   ``` bash
+  npm i -D css-loader style-loader sass-loader node-sass
+  ```
+  ### Install file loader and html loader
+  ``` bash
+  npm i -D html-loader file-loader
+  ```
+
+   ### Install bootstrap and dependencies for using it
+  ``` bash
+  npm i -D jquery popper.js
+  ```
