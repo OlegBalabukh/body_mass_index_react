@@ -30,3 +30,10 @@
   ### Add module object with rule for js files
 
   ### Configure '.babelrc' file
+
+  ### Install decorator plugin, add it to '.babelrc' file.
+  #### When using decorators like @withStyles(style) of MaterialUI
+   ``` bash
+  npm i -D @babel/plugin-proposal-decorators
+  ```
+  
