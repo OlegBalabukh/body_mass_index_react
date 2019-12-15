@@ -48,15 +48,20 @@
   npm i -D html-loader file-loader
   ```
 
-   ### Install bootstrap and dependencies for using it
+  ### Install bootstrap and dependencies for using it
   ``` bash
   npm i -D jquery popper.js
   ```
 
-   ### Install babel/polyfill to load polyfills for older browsers
+  ### Install babel/polyfill to load polyfills for older browsers
   ``` bash
   npm i @babel/polyfill
   ```
 
   ### Provide code splitting  using Dynamic Imports
   #### https://webpack.js.org/guides/code-splitting/
+
+  ### Install webpack-merge to share the common functionality between webpack config files 
+  ``` bash
+  npm i -D webpack-merge
+  ```

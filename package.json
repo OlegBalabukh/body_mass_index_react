@@ -4,9 +4,9 @@
   "private": true,
   "main": "src/index.js",
   "scripts": {
-    "start": "webpack-dev-server --config webpack.config.js --open --port 4000 --compress --mode development",
+    "start": "webpack-dev-server --config webpack.dev.js --open --port 4000 --compress ",
     "dev": "webpack --mode development --progress",
-    "build": "webpack --mode production --progress"
+    "build": "webpack --config webpack.prod.js --progress"
   },
   "dependencies": {
     "@babel/polyfill": "^7.7.0",
@@ -47,6 +47,7 @@
     "style-loader": "^1.0.1",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10",
-    "webpack-dev-server": "^3.9.0"
+    "webpack-dev-server": "^3.9.0",
+    "webpack-merge": "^4.2.2"
   }
 }
