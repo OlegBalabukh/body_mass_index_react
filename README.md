@@ -57,3 +57,6 @@
   ``` bash
   npm i @babel/polyfill
   ```
+
+  ### Provide code splitting  using Dynamic Imports
+  #### https://webpack.js.org/guides/code-splitting/
