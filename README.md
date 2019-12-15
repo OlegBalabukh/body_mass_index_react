@@ -52,3 +52,8 @@
   ``` bash
   npm i -D jquery popper.js
   ```
+
+   ### Install babel/polyfill to load polyfills for older browsers
+  ``` bash
+  npm i @babel/polyfill
+  ```
