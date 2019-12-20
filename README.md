@@ -70,3 +70,15 @@
   ``` bash
   npm i -D mini-css-extract-plugin
   ```
+
+  # Install plugin for minifying css
+  ``` bash
+  npm i -D optimize-css-assets-webpack-plugin
+  ```
+
+  # Clean dist directory before each build
+   ``` bash
+  npm i -D clean-webpack-plugin
+  ```
+
+  #### Webpack dev server runs on http://localhost:4000
