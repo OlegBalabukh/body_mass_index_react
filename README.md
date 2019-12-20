@@ -65,3 +65,8 @@
   ``` bash
   npm i -D webpack-merge
   ```
+
+  ### Install plugin for extracting css in separate file in production
+  ``` bash
+  npm i -D mini-css-extract-plugin
+  ```
