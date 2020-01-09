@@ -1,68 +1,84 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# WEBPACK CONFIGURATION
 
-## Available Scripts
+  ##  Delete create-react-app from project (remove 'react-scripts' from package.json)
 
-In the project directory, you can run:
+  ##  Add dev dependencies 
+  ``` bash
+  # Install packages:
+  # for webpack, last version of html plugin, babel dependencies,
+  # plugin for transformation static class properties
+  npm i -D webpack webpack-cli webpack-dev-server html-webpack-plugin@next @babel/core babel-loader @babel/preset-env @babel/preset-react @babel/plugin-proposal-class-properties
 
-### `npm start`
+  # Webpack dev server runs on http://localhost:8080
+  # Tutorial: https://youtu.be/A4swyDR45SY
+  ```
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+  ## Configure 'webpack.config.js'
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+  ###  Create 'webpack.config.js' file in root folder
+  ``` bash
+  touch webpack.config.js
+  ```
 
-### `npm test`
+  ### Skip 'entry' and 'output' properties
+  #### Default entry: ./src/index.js
+  #### Default output: ./dist/main.js
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  ### Add 'cheap-module-source-map' for devtool property
+  #### https://webpack.js.org/configuration/devtool/
 
-### `npm run build`
+  ### Add module object with rule for js files
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  ### Configure '.babelrc' file
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+  ### Install decorator plugin, add it to '.babelrc' file.
+  #### When using decorators like @withStyles(style) of MaterialUI
+   ``` bash
+  npm i -D @babel/plugin-proposal-decorators
+  ```
+  
+  ### Add 'start', 'dev', 'build' properties to package.json
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+  ### Install loaders for css and sass
+   ``` bash
+  npm i -D css-loader style-loader sass-loader node-sass
+  ```
+  ### Install file loader and html loader
+  ``` bash
+  npm i -D html-loader file-loader
+  ```
 
-### `npm run eject`
+  ### Install bootstrap and dependencies for using it
+  ``` bash
+  npm i -D jquery popper.js
+  ```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+  ### Install babel/polyfill to load polyfills for older browsers
+  ``` bash
+  npm i @babel/polyfill
+  ```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+  ### Provide code splitting  using Dynamic Imports
+  #### https://webpack.js.org/guides/code-splitting/
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+  ### Install webpack-merge to share the common functionality between webpack config files 
+  ``` bash
+  npm i -D webpack-merge
+  ```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+  ### Install plugin for extracting css in separate file in production
+  ``` bash
+  npm i -D mini-css-extract-plugin
+  ```
 
-## Learn More
+  # Install plugin for minifying css
+  ``` bash
+  npm i -D optimize-css-assets-webpack-plugin
+  ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+  # Clean dist directory before each build
+   ``` bash
+  npm i -D clean-webpack-plugin
+  ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+  #### Webpack dev server runs on http://localhost:4000
